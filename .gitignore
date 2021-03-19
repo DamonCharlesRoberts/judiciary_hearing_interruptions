@@ -1,0 +1,8 @@
+# Ignore IDE file
+.vscode/
+
+# Ignore R history
+.RHistory
+
+# Ignore data directory
+data/
