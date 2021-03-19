@@ -5,4 +5,4 @@
 .RHistory
 
 # Ignore data directory
-data/
+/data
