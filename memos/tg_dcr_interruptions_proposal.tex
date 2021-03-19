@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage[margin=1.2in]{geometry} 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{accents}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{apacite}
+\pagestyle{fancy}
+\setlength{\headheight}{38pt}
+\usepackage{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+
+\usepackage[bookmarksopen = true, colorlinks = TRUE, urlcolor = black, linkcolor = black, citecolor = black]{hyperref}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+\begin{document}
+
+\lhead{Tyler Garrett and Damon Roberts} 
+\rhead{Interruptions in Federal Judiciary Senate Confirmation Hearings \\ Memo: Project Proposal \\ March $12^{th}$, 2021}
+
+\cfoot{\thepage}
+
+\doublespacing
+
+\begin{enumerate}
+    \item Are there gender differences in the number of times a nominee for a federal judicial position is interrupted during a confirmation hearing in the Senate Judiciary Committee?
+    \item Hypotheses
+    \begin{enumerate}
+        \item $H_1$: We expect that female nominees are interrupted more often during confirmation hearings relative to their male counterparts. 
+        \item $H_2$: We expect that female nominees are interrupted more often during confirmation hearings relative to their male counterparts by Republican members of the committee. 
+    \end{enumerate}
+    \item We plan to use transcript data collected from the Senate Judiciary Hearing's website on federal appointment hearings\footnote{\href{https://www.govinfo.gov/committee/senate-judiciary?path=/browsecommittee/chamber/senate/committee/judiciary/collection/CHRG/congress/107}{See Senate Judiciary Committee's website}}. 
+    \item We anticipate the simplest approach that will be the most valuable would be to do a count of the number of times an em dash is used in a transcript. With that count, we can then run a negative binomial model (assuming the distribution's mean is different than the median - overdispersed; which is often the case.) to get a comparison of counts between male and female nominees.
+    \item We anticipate that a key challenge would be drift in the way in which note takers represent an interruption. Ideally, it all uses the em dash, but this still needs to be confirmed for older transcripts. We also anticipate that the coding of the gender of the nominee and the partisanship of the committee member will require quite a large amount of manual coding - and time is pretty sparse for the two of us these days.  
+\end{enumerate}
+\newpage
+\bibliographystyle{apsr}
+\bibliography{C:/Users/damon/Dropbox/Bibliographies/zaller1992}
+\end{document}
