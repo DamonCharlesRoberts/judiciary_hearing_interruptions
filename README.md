@@ -1,4 +1,17 @@
-# Judiciary Hearing Interruptions
+<h4 align="center">Judiciary Hearing Interruptions.</h4>
+<p align="center">
+    <a href="https://github.com/DamonCharlesRoberts/judiciary_hearing_interruptions/commits/master">
+    <img src="https://img.shields.io/github/last-commit/DamonCharlesRoberts/judiciary_hearing_interruptions.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub last commit"></a>
+    <a href="https://github.com/DamonCharlesRoberts/seniority-project/issues">
+    <img src="https://img.shields.io/github/issues-raw/DamonCharlesRoberts/judiciary_hearing_interruptions.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub issues"></a>
+    <a href="https://github.com/DamonCharlesRoberts/seniority-project/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/DamonCharlesRoberts/judiciary_hearing_interruptions.svg?style=flat-square&logo=github&logoColor=white"
+         alt="GitHub pull requests"></a>
+</p>
+
+--- 
 Analysis of interruptions of nominees for federal judiciary positions.
 
 ## Co-authored academic project with Tyler Garrett
