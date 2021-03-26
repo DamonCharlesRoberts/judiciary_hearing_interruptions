@@ -15,12 +15,13 @@ box::use(
    dplyr = dplyr[...],
    quanteda = quanteda[...],
    tibble = tibble[...],
-   tidyverse = tidyverse[...]
+   tidyverse = tidyverse[...],
+   readr = readr[...]
 )
 here::here()
 
 ##### transcriptsRead fxn ####
-#folder <- "male_white"
+#folder <- "female_poc"
 
 transcriptsRead <- function(folder){
 filePath <- paste("data/", folder, sep = "")
@@ -36,23 +37,9 @@ df <- lapply(fileVector, pdf_text)
 for (i in 1:length(fileVector)){
 df <- pdf_text(fileVector[i])
 df <- data.frame(df)
-df <- data.frame(df) %>%
-  gsub("D.C.", "d.c.", .) %>%
-  gsub("U.S.", "u.s.", .) %>%
-  gsub("OPENING STATEMENT OF HON.", "opening statement of hon", .) %>%
-  gsub("W. Bush", "w.bush", .) %>%
-  gsub("ACLU.", "aclu", .) %>%
-  gsub("IV.", "iv", .) %>%
-  gsub("NRA.", "nra", .) %>%
-  gsub("III.", "iii", .) %>%
-  gsub("USDA.", "usda", .) %>%
-  gsub("TV.", "tv", .) %>%
-  gsub("W.", "w", .) %>%
-  gsub("NRLB.", "nrlb", .) %>%
-  gsub("NLRA.", "nrla", .) %>%
-  gsub("II,", "ii", .) 
 df <- data.frame(df)
-positions <- gregexpr('\\b[A-Z]+[A-ZA-Z]*(\\b\\s*\\b[A-ZA-Z]*)*\\.', df)[[1]]
+positions <- gregexpr ('(Senator|Justice|Judge|Mr.|Ms.|Mrs.) (\\b[A-Z]{2,}\\.)', df)[[1]]
+#positions <- gregexpr('\\b[A-Z]+[A-ZA-Z]*(\\b\\s*\\b[A-ZA-Z]+[A-Za-z])*\\.', df)[[1]]
 # regex detailed explanation (note \\ instead of \ because we need to escape "\" in R strings):
 # \\b = word boundary
 # [A-Z]+ any non-zero capitalized word or letter.
@@ -81,10 +68,10 @@ text <- substring(df,
                   text_ends)
 
 df <- data.frame(names = names, text = text) %>%
-    mutate(male = 1) %>%
-    mutate(poc = 0)
+    mutate(male = NA) %>%
+    mutate(poc = NA)
 
-write_csv(df, paste("C:/Users/damon/Dropbox/judiciary_hearing_interruptions/data/", "sorted_", i , ".csv", sep = ""))
+write_csv(df, paste("C:/Users/damon/Dropbox/judiciary_hearing_interruptions/data/", folder,"/", "cleaned_", i , ".csv", sep = ""))
 }
 }
 
