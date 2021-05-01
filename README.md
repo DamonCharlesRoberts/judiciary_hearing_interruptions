@@ -19,3 +19,9 @@ Analysis of interruptions of nominees for federal judiciary positions.
 # Code
 
 * `code/pre_processing_fxns.R`: Takes raw .pdf transcripts and uses a function, that when executed, makes a row per speaker with a column for that speaker's name and a column of what they said.
+
+* `code/pre_processing_script.R`: Executes transcriptsRead function sourced from `code/pre_processing_fxns.R`. Converts .pdf files (using the transcriptsRead() function) to .csv files. Then merges csv files from individual nominee to one .csv per nominee Race and Gender combination (for example a csv with all hearings from all non-white females). 
+
+* `code/counts.R`: Demographic data and further transcript cleaning (i.e. creating variable for count of em-dashes)
+
+* `code/primary_analysis_script.R`: File with the primary analyses, figures, and tables included in  the paper. 

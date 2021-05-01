@@ -20,6 +20,8 @@ box::use(
 demographics <- read_csv("data/judge_demographic_data.csv") %>%
   rename(names = `Last Name`)
 demographics$names <- str_to_upper(demographics$names)
+demographics <- demographics %>%
+  filter(`Appointing President (1)` == "George W. Bush" | `Appointing President (1)` == "Barack Obama" | `Appointing President (1)` == "Donald J. Trump")
 
 #### White Males ####
 male_white <- transcriptsRead("male_white") # execute function to convert pdfs to csvs with line of transcript per row and column for speaker
