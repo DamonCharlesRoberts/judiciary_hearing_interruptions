@@ -1,7 +1,7 @@
 #### Judiciary Hearing Interruptions: Cleaning - Preprocessing and loading data ####
 
 #### Notes: ####   
-    ### Description: Script to turn pdf's to be readable. Goal is to get count of times nominees were interrupted (represented by the em dash). ###
+    ### Description: Define function to turn pdf's to be readable and convertable to CSV's ###
 
 #### Updates: ####
     ### By: dcr ###
