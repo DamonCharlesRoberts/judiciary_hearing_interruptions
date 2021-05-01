@@ -3,7 +3,12 @@
 
 # Ignore R history
 .RHistory
+.RData
 
 # Ignore data directory
 /data/*
 .Rproj.user
+/archived_code/*
+/Literature/*
+/memos/*
+/Presentation/*
