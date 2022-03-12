@@ -12,7 +12,8 @@ box::use(
   dplyr = dplyr[...],
   magrittr = magrittr[...],
   stringr = stringr[str_count],
-  tidyr = tidyr[separate]
+  tidyr = tidyr[separate],
+  readr = readr[read_csv, write_csv]
 )
 
 transcripts <- read_csv("data/analyzable_transcript.csv")
@@ -68,8 +69,7 @@ interruptionCounts <- interruptionCounts %>%
 
 
 interruptionCounts <- interruptionCounts %>%
-  mutate(court = ifelse(`Court Type (1)` == "Other", 0,
-                        
+  mutate(court = ifelse(`Court Type (1)` == "Other", 0,                   
                         ifelse(`Court Type (1)` == "U.S. District Court", 1, 
                                ifelse(`Court Type (1)` == "U.S. Court of Appeals", 2, NA))))
 

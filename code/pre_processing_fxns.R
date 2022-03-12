@@ -38,8 +38,8 @@ for (i in 1:length(fileVector)){
 df <- pdf_text(fileVector[i])
 df <- data.frame(df)
 df <- data.frame(df)
-positions <- gregexpr ('(Senator|Justice|Judge|Mr.|Ms.|Mrs.) (\\b[A-Z]{2,}\\.)', df)[[1]]
-#positions <- gregexpr('\\b[A-Z]+[A-ZA-Z]*(\\b\\s*\\b[A-ZA-Z]+[A-Za-z])*\\.', df)[[1]]
+positions <- gregexpr('(Chairman|Senator|Justice|Judge|Mr.|Ms.|Mrs.) (\\b[A-Z]{2,}\\.|\\b[A-Z]{2,}\\b([continuing])\\.)', df)[[1]]
+#positions <- gregexpr('\\b[A-Z]+[aA-ZA-Z]*(\\b\\s*\\b[A-ZA-Z]+[A-Za-z])*\\.', df)[[1]]
 # regex detailed explanation (note \\ instead of \ because we need to escape "\" in R strings):
 # \\b = word boundary
 # [A-Z]+ any non-zero capitalized word or letter.
@@ -71,7 +71,7 @@ df <- data.frame(names = names, text = text) %>%
     mutate(male = NA) %>%
     mutate(poc = NA)
 
-write_csv(df, paste("C:/Users/damon/Dropbox/judiciary_hearing_interruptions/data/", folder,"/", "cleaned_", i , ".csv", sep = ""))
+write_csv(df, paste("/Users/damonroberts/Dropbox/current_projects/tg_dcr_judiciary_hearing_interruptions/data/", folder,"/", "cleaned_", i , ".csv", sep = ""))
 }
 }
 

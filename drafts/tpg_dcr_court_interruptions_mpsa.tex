@@ -1,0 +1,240 @@
+% ------- Create Preamble ------------
+\documentclass [12pt]{article} 
+\usepackage[a4paper]{geometry} 
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{graphicx,epsfig}
+\usepackage{booktabs} 
+\usepackage{pslatex} 
+\usepackage{caption} 
+\usepackage{setspace} 
+\usepackage{hyperref} 
+\usepackage{multicol, multirow}
+\usepackage{graphicx,epsfig}
+\usepackage{booktabs}
+\usepackage{pslatex}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{textgreek}
+\usepackage{pdfpages}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{natbib} % For references
+\bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation
+\def\citeapos#1{\citeauthor{#1}'s (\citeyear{#1})}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{nullhypothesis}{Null Hypothesis}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks,
+	linkcolor={blue!50!blue},
+	citecolor={black!50!black},
+	urlcolor={blue!80!blue}
+}
+
+\usepackage{indentfirst}
+
+\widowpenalty=5000
+\clubpenalty=5000
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Garrett and Roberts}
+\lhead{\textit{Don't Interrupt Me}}
+\rfoot{Page \thepage}
+
+%---Set up author and title page
+\singlespace
+\title{Don't Interrupt Me: The Interruption of Female and Nominees of Color in Federal Judiciary Confirmation Hearings}
+\author{Tyler Garrett\footnote{Ph.D. Student, Department of Political Science, University of Colorado Boulder, UCB 333, Boulder, CO 80309-0333. Tyler.Garrett@colorado.edu} \and Damon C.\ Roberts\footnote{PhD Candidate,
+		Department of Political Science, University of Colorado Boulder, UCB 333, Boulder, CO 80309-0333. Damon.Roberts-1@colorado.edu. \newline \textbf{Note: Author name order is alphabetical.} \newline \textbf{Acknowledgements:} We'd like to thank the American Political Research Lab at the University of Colorado Boulder for their advice and we'd like to thank Alexdandra Siegel for her advice and for her support. \newline \textbf{Project Code:} \href{https://github.com/DamonCharlesRoberts/judiciary_hearing_interruptions}{Found on Github - https:://github.com/DamonCharlesRoberts}}}
+
+%set up document
+\date{Updated: \today}
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+A common expectation is that the nomination process of federal court judges have become relatively more conflictual as polarization in Congress has increased over time. We expect that the degree to which one is treated differently by members of the committee is not just the result of partisanship but also based on one's ascriptive characteristics like gender and race. By quantifying text, we examine female nominees and nominees of color face biases irregardless of their political leanings. Through the analysis of transcripts from the Senate Committee for the Judiciary from 2001-2020, we found some evidence that warrants further investigation that female nominees and nominees of color are treated differently during their confirmation proceedings. While there are mixed results for interruptions of nominees, female nominees and nominees of color do encounter gendered and racialized questions and comments that their white and male colleagues do not. 
+	\end{abstract}
+	
+	\textbf{Word Count: 5,520} 
+	
+	\textbf{Keywords: Gender, Race, Judicial Politics, Text Analysis, Transcripts}
+
+	\cleardoublepage
+    \setcounter{page}{2}
+	\newpage
+	\doublespace
+	\newpage 
+
+\section{Introduction}
+	
+Many streams of the literature in political science are concerned with the ways in which particular institutional and societal biases affect the degree to which one is able to exert voice in political settings. In Congress, for example, women are often presumed to be more collegial and more adept at arranging events for the branch \citep{Lawless2018}, women are less likely to have the opportunity to express an opinion in many common settings with political deliberation  \citep{Karpowitz2012}, and female Justices on the Supreme Court are more likely to be interrupted by their male colleagues than they are to interrupt them \citep{Jacobi2017}. It is not only along the dimension of gender that we see these biases occur, however. When intersectional identities are at play, the voices of members of these groups are often drowned out by those of males and whites \citep[see][for example]{Strolovitch2006}. We are likely to see these effects happen, in particular, for nominees of various positions with the federal court system. 
+
+Furthermore, examples of either gendered or racialized questions and comments by senators during the confirmation processes are prevalent even today. During the confirmation of Amy Coney Barrett to the United States Supreme Court—the highest court in the land—Senator John Kennedy of Louisiana asked the nominee about who does the laundry at her home. It does not appear that Senator Kennedy asked other recent Supreme Court nominees Neil Gorsuch or Brett Kavanaugh—both white men—who does laundry in their house. This same questioning did not occur with any other nominee. With the announcement from the Biden administration that they were nominating Ketanji Brown Jackson to the Supreme Court to replace Breyer, Tucker Carlson appeared on his program aired by Fox News to question Jackson's qualifications by demanding to see her LSAT scores, racistly implying her success has come from affirmative action.  In light of a number of highly polarizing and recent confirmation hearings for nominees to federal judicial positions - Justices Gorsuch, Kavanaugh, and Coney-Barrett, in particular - this manuscript seeks to determine whether these common gender and racial biases documented in previous work present themselves in the transcripts of confirmation hearings for federal court positions. 
+
+In this study, we set out to determine if female and nominees of color are treated differently than their white and male counterparts during their confirmation proceedings before the Senate Judiciary Committee. If they are treated differently, then this contributes to the barriers that female and nominees of color face when navigating yet another hurdle in the advancement of their legal careers. Further, support of this hypothesis would pose a direct challenge to claims that the lack of non-white and female representation in the federal court system is the result of supply from law school or qualifications. While finding evidence of our hypothesis would not necessarily show that nominees of color and female nominees are held to a \textit{higher} standard - as we do not test this, evidence in support of our hypothesis would demonstrate that they are held to \textit{different} standards.
+
+In two studies we explore whether female and nominees of color were treated differently than their white and male colleagues. First, we tested whether female and nominees of color are interrupted at a higher rate than their white and male colleagues. We find mixed results. In the second study we set out to determine if the topics during confirmation hearings for female and nominees of color bring up different topics than those discussed during confirmation hearings for white and male nominees. Our analysis found that there are some substantive differences in the topics that are discussed during the confirmation processes of female and nominees of color than their white and male counterparts. As in the example of Amy Coney Barrett above, the substantive differences in topics discussed in the confirmation processes of female and nominees of color consist of both racial and gendered stereotypes that are prevalent in politics and society today. 
+
+We start our study with a discussion of the motivating literature around this topic of how women and people of color as either nominees or as actors within the federal government have been treated differently. Particularly, we will focus on how these individuals are treated during in a group dynamic amongst other governmental actors. We will then briefly discuss our theory and how we plan to build upon those who have come before us in this important literature. Following our discussion of our theory, we will lay out how we conducted our study—from the collection of transcripts for Senate Judiciary Committee hearings on confirmations for federal judges and justices, sorting the data, determined interruptions and then set out at analyzing the data on the discrepancies between white male nominees and nominees of color and female nominees. Following our analysis and discussion of results, we will conclude with the impact of this study, a discussion of future iterations of this project moving forward, and discussing avenues for future research related to this study. 
+
+	\subsection{Political biases around race}
+On the dimension of race, there have been only 2 Black justices and one Hispanic justice. We have yet to see an Asian-American justice, indigenous justice, or justice of any other race or ethnicity. Since the Carter Administration, presidents have paid closer attention to the gender and racial diversity of their nominees \citep{Kastellec2013}. 
+
+\section{Biases in politics and the courts}
+
+Stereotypes based on gender in politics are quite common and are quite well documented. Women are assumed to be more liberal \citep{mcdermott_1997}, more warm due to gender stereotypes and their connection to sex \citep{laustsen_bor_2017}, and are assumed to be less competent at addressing salient policy issues like crime \citep{huddy_terkildsen_1993, sanbonmmatsu_dolan_2009}; which are assumed to be more masculine \citep{holman_et-al_2016}. With all of these electoral biases, women are less likely to be considered for higher public office \citep{oliver_conroy_2020} and if they attain office, are more likely to face stronger criticism for the work they do \citep{lazarus_steigerwalt_2020}.
+
+Stereotypes based on race are also widespread and pervasive. Holding negative racial attitudes is attributed to not just be among the predictors of vote choice and policy support \citep{sides_et-al_2020, gilens_1999}, but it is argued to be \textit{the} predictor of such evaluations; more so than class \citep{hajnal_2020}. If you take the average white respondent unsupportive of welfare programs, which the media frames as disproportionately beneficial to Black Americans, they argue it is not that they dislike the programs themselves but that they feel that Black Americans are ``undeserving" \citep{winter_2008}. Additionally, non-white candidates, specifically African American candidates like Obama, feel pressure by White segments of their electorate to ``distance" themselves from their African American voters due to the tendency for White voters to dislike candidates ``beholden" to a particular racial group's interest \citep{stephens_dougan_2020}; except for their own that is. In some ways the courts are reflections of these same emergence and continuing biases that women and people of color face while running for political offices. As there is little reason to believe that these biases somehow stop at the courthouse footsteps, we believe that some of these phenomenon may also be present in some form in the federal courts.
+
+The majority of judges and justices on the federal courts in the United States are white men \citep{Kastellec2013}. Since the Court was established in 1789, there have been only 5 female justices out of the 115 justices to serve on the United States Supreme Court. Although there have been a growing number of female and nominees of color to the federal judiciary, the path to the bench upon being nominated is not always easy. The confirmation processes for female nominees and nominees of color are longer with a lower outcome of success \citep{Asmussen2011}. Part of this is likely due to the increase in polarization in Congress--particularly in the Senate Judiciary Committee--since the Carter Administration, which has catastrophic effects on the norms of the Senate \citep{Owens2018, McCarty}. It is evident in the literature that the role of partisan politics in confirmation processes for female and nominees of color has created even more arduous proceedings than previously \citep{Solowiej2005}. 
+
+Not only are female nominees and nominees of color facing the possibility of longer confirmation hearings with less confidence of success \citep{Asmussen2011}, the nominees also face questions that their white and male colleagues do not--this is common for female and nominees of color for the federal judiciary and for elected positions \citep{Boyd2018, Hayes2015a, Devitt2002, Palmer2010, Schultz1997}. Whereas male candidates for office will often get questions about the issues, female candidates are faced with those questions and questions about their personality and qualifications \citep{Devitt2002}. We expect this to hold as true in the context of confirmation hearings to the federal bench as it does for political candidates. Finally, female nominees for the Supreme Court (as well as for Cabinet positions) are faced with a higher rate of questions pertaining to their qualifications, personality, stance on ``women's issues" and their appearance than their male colleagues \citep{Boyd2018, Hayes2015a, Devitt2002, Palmer2010, Schultz1997}. Once they have joined the court, scholars have documented a continuation of these gender and race-based biases.
+
+While a constant barrage of questions from the justices on the Supreme Court is normal, there has been a trend emerging that breaks with the norms of the Court. While it was normal for the justices to occasionally interrupt each other, we have seen an increase in the justices speaking over one another to ensure that their question is answered \citep{Jacobi2017}. The interruptions are not equal though amongst the justices. Female justices are interrupted at a higher rate by their colleagues than male justices \citep{Jacobi2017}. Furthermore, female justices are interrupted more by attorneys at higher rates than their male colleagues \citep{Jacobi2017}. This is astounding and unprecedented. Although the attorneys arguing before the Supreme Court are at the top of their field and most likely experts in the area of law present in the case, interrupting a Supreme Court justice while they are sitting on the bench is a major faux pas. The justices are typically treated with an incredible amount of respect, yet interrupting a justice seems to indicate a diminishing lack of respect. 
+
+The study by Jacobi and Schweers (2017) was a major motivation for our study. We were perplexed by the audacity of attorneys to interrupt sitting Supreme Court justices and the indication of inherent sexist tendencies that the female justices must contend. We figure that if the individuals that sit on the highest court of the land can face such actions while on the bench, they and their colleagues that are nominees for lower level courts must face similar situations during their confirmation hearings before the Senate Committee on the Judiciary. Particularly, when there is this veil shielding those expressing the biases as the result of ``ideological disagreements."
+
+Building on this literature, we set out to determine in a descriptive study if female nominees and nominees of color are treated differently than their white and male colleagues. Given the literature above, we highlight two hypotheses meant to describe descriptive patterns.
+
+\begin{itemize}
+\item[\textit{$H_1$}:] There are gendered-and-racially-based differences in how federal judicial nominees will be treated during their confirmation hearing before the Senate Committee on the Judiciary.
+\begin{itemize}
+    \item[\textit{$H_{1a}$}:] Female nominees for federal judicial appointments will be interrupted at a higher rate during their confirmation proceedings than their white male colleagues. 
+    \item[\textit{$H_{1b}$}:] Nominees of color for federal judicial appointments will be interrupted at a higher rate during their confirmation than their white male colleagues.
+\end{itemize}
+
+\item[\textit{$H_2$}:] The Senate Committee on the Judiciary will discuss topics with gendered or racialized connotations if there are female and nominees of color as opposed to their white male colleagues. 
+\begin{itemize}
+    \item[\textit{$H_{2a}$}:] Female nominees will face a higher rate of questions and focus on topics associated with gender than male nominees. While there are a number of such topics, we might expect more focus on topics around the female nominee's family as this is a common trope of career-oriented women and is a common challenge to female candidates for political office \citep[see][]{sanbonmatsu_dolan_2009}.
+    \item[\textit{$H_{2b}$}:] Nominees of color will face a higher rate of questions and focus on topics associated with their qualifications and their views on equity than white nominees. Again, there are a number of topics that may be ``racialized", however, previous literature shows that, on the whole, the electorate - particularly the white electorate - are much less supportive of non-white candidates who do not actively distance themselves from those in their community \citep{stephens_dougan_2020}. We also know that it is common for Americans to bring about questions of deservingness for people of color in the U.S.\citep{gilens_1999};much of it stemming from resentment towards affirmative action.
+\end{itemize}
+\end{itemize}	
+
+In order to determine if there are any differences in the way that female and nominees of color are treated compared to white and male nominees, we focus on interruptions. As we have seen, female justices on the Supreme Court are being interrupted at a higher rate than male justices and lawyers will even interrupt the female justices \citep{Jacobi2017}. This leads us to expect that there would also be a difference in the way that female and nominees of color would be treated by senators during their confirmation proceedings. We expect before running the analysis that female and nominees of color would be interrupted by the senators at a higher rate than white and male nominees. Additionally, female nominees of color would be interrupted at the highest rate. If interruptions were higher for female and nominees of color, then we would be able to say that there are gendered and racially motivated norms for how female and nominees of color are treated during their confirmation hearing. We, ultimately, find mixed results, which lead us to consider that instead of the sheer volume of interruptions we need to determine the motivation behind the interruption.
+
+As for the second hypothesis, we again need to determine if there is a difference in how female and nominees of color are treated during their confirmation hearings. Instead of interruptions though, we use topic models to determine if senators ask female and nominees of color more gendered and racialized questions than their white male colleagues. Other than blatant gendered and racialized questions, a higher number of questions about the nominees intellect, commitment, qualifications, and experience would also lead us to believe that the committee is adhering to unfair norms that emulates themselves in the form of gendered and racialized questions and comments for the nominees. We do find that there are some differences between the topics discussed during the confirmation hearing between male and female nominees and white nominees and nominees of color.
+
+\section{Methods}
+
+We conduct two studies. The first study is concerned with testing our first set of hypotheses that predict differences in the number of interruptions a nominee experiences due to their gender and their racial status. The second study then is tasked with determining whether there are differences in the topics that are discussed during a nominee's committee. As noted above, while it is possible that nominees experience more or less interruptions based on their demographic characteristics, those biases are likely not limited to only that - the topics of which are brought up to determine one's qualification for the role is likely to be different based on commonly held racial and gender biases. Study 2 uses the same transcript above, but uses topic models to study these hypothesized dynamics.
+	     
+For both studies we collected data from the Senate Judiciary Committee's website where they publish PDF documents of transcripts from their committee hearings. We found the documents containing the transcripts from the confirmation hearings for federal appointments held from 2001 until 2020. We chose this time period to capture hearings from a reasonable time period where we have a sample of nominees presented by both Republican and Democratic presidents. We wanted to also ensure that since the hearings of a few of President Donald J. Trump's nominees were quite publicly polarizing, that we had nominees from a Republican president like George W. Bush who's nominees were somewhat less controversial. Once we had collected these documents, we used data from the Federal Judicial Center \footnote{\href{https://www.fjc.gov/}{Federal Judicial Center}} which we used to leverage demographic information about the federal nominees to assign each of the transcripts to labels based on whether the nominee was a Male or Female and whether they were a Person of Color (POC) or not. Once we completed this manual coding we preformed a Regular Expression content matching to separate the lines of the transcripts where people spoke. Line breaks were consistently recorded throughout the transcripts as ``\textbackslash n \textbackslash r" while new lines started with the title capitalized along with the last name of the speaker followed by a period (e.g. SENATOR MERKLEY.) Additionally, we used the list of nominees contained in the Federal Judicial Center data of judicial nominees to select the lines where a nominee spoke and filtered out the comments made by the committee members. Once we had this filtered text, we again used Regular Expression matching to get an aggregated count over the course of a hearing for the number of times a candidate was interrupted; thankfully, interruptions were consistently recorded in the transcripts as em-dashes followed by a line break (i.e. ``\textbackslash r \textbackslash n"). 
+	
+The count of interruptions recorded for a particular nominee in their hearings are presented in Figure \ref{fig:1}. We excluded the cases of Kavanaugh and Gorsuch in the figure due to the abnormally high count of interruptions they experienced in the hearing which were 556 and 386 respectively. The dashed line depicts the median count of interruptions which is 0, along with a dotted line depicting the location of the median which is 3.79.
+	
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[height = 175mm, width = 175mm]{../tables_figures/interruptions_distribution.png}
+	    \caption{Density of interruption counts}
+	    \label{fig:1}
+	\end{figure}
+    
+    We also present Figure \ref{fig:2} which is meant to demonstrate the descriptive differences in interruptions between male and female, and POC and non-POC nominees. Here, we see that most nominees do not experience too many interruptions over the course of their hearings.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 175mm, width = 175mm]{../tables_figures/interruptions_ridgeplot.png}
+        \caption{Densities of interruption counts by Gender and Race}
+        \label{fig:2}
+    \end{figure}
+    
+
+    
+\subsection{Study 1}
+	    
+The goal of our task here is not to make causal claims. We simply want to test the claim whether the number of interruptions a nominee faces are based on their gender or on their race. Keeping this goal in mind, we first use a simple unpaired two-samples Wilcoxon test \footnote{Rather than using a simple t-test, we use a non-parametric form which relaxes the distributional assumptions that are involved with standard student t-tests and $\chi$ tests. We include a figure for the results of the t-test as well in the main body of the text. The non-parametric Wilcoxon test is used over the t-test due to the variation between the distributions of counts on our sub-samples on race and gender. Since parametric tests often assume the comparability in distributions of our variables, as Figure \ref{fig:2} demonstrates, it seems somewhat inappropriate to use a parametric version of the test.} to determine whether there are descriptive differences for these considerations among the dichotomized social classifications. We also hypothesized that partisan disagreement over the nominee by the nominating president and the committee could be an important alternative explanation for the number of interruptions a nominee faces. Therefore we include a proxy for how favorable the committee is likely to be toward the nominee. We first collected information about the Senate Committee on the Judiciary's membership from the $107^{th}$ Congress until the $116^{th}$. Committee compositions that had a Republican majority were given positive values and if it was a Democratic majority, it was assigned negative values (the integer assigned was based on how many members more than the minority party). We then used these data to calculate whether there was a split between the party of the President that made the nomination and the partisan composition of the committee. If there was a division, the index was coded as 1 and 0 if there was no division. These alternative explanations tested in conjunction with our gender and POC variables in a regression analysis presented later.
+	    
+For our Wilcoxon Test we are comparing the means within nominee characteristics. That is, we split our sample to be based on whether the nominee was POC or they were not. We then took the counts of the nominees in the split sample and compared the counts between POC and non-POC nominees to see whether there was any substantive difference. We made this comparison for the other two characteristics (gender and partisan division) as well. We also ran Wilcoxon tests with the full sample and a sample where we exclude the cases of Gorsuch and Kavanaugh. The results of the Wilcoxon Test are presented in Figure \ref{fig:wilcox}. In terms of hypothesis testing, the dots depict the p-values of the variables. Any dot below 0.05 (first dashed line on the x-axis) or above 0.95 (second dashed line on the x-axis) would be considered support for the alternative hypothesis that there is a meaningful difference greater than zero. We also relaxed the distributional assumptions and ran a two-sided t-test. The results of these t-tests are presented in a coefficient plot in Figure \ref{fig:3}. The dots represent the t-statistic and the bars represent the 95\% confidence interval for a null hypothesis. In terms of hypothesis testing, support for a null hypothesis (that we do not observe meaningful differences in the mean counts between the categories) would present itself as an overlapping between our dot (or the t-statistic) and the bar (the 95\% confidence interval). 
+	   	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[height = 175mm, width = 175mm]{../tables_figures/wilcox-test.png}
+	        \caption{Unpaired Two-samples Wilcoxon Test}
+	        \label{fig:wilcox}
+	    \end{figure}
+	    
+	    \begin{figure}[H]
+	        \centering
+	        \includegraphics[height = 175mm, width = 175mm]{../tables_figures/t-test.png}
+	        \caption{T-test comparison of means for nominee characteristics}
+	        \label{fig:3}
+	    \end{figure}
+
+From the Wilcoxon test and the t-test we observe that for both the full and the truncated dataset, our hypotheses on gender and race are not supported. The tests suggest that the mean counts of interruptions between Male and Female nominees and POC and non-POC nominees are not significantly different. We find support, however, for the hypothesis that there are meaningful differences between the mean counts of interruption between those nominated by a present of the opposing party than the majority party in the committee. This is only found in our censored dataset that excludes the cases of Gorsuch and Kavanaugh. From it, we see that the t-value is negative which tells us that the mean number of interruptions in a partisan-based divided president-committee relationship is meaningfully different and substantively larger than in a partisan congruent president-committee relationship. This same conclusion is drawn from the Wilcoxon test - there is a positive relationship between division in government and the number of interruptions a nominee experiences. We are also interested in determining whether these characteristics matter in predicting the number of interruptions in multivariate setting. We expect that these factors all work together in some combination to influence the degree to which a nominee is interrupted. 
+
+From Figure \ref{fig:2} we notice that there is a difference between the conditional mean and conditional variance of our interruption variable. It is not obvious that there is a separate data generating process leading to the high number of zeros, but we are not entirely sure. Given the difference between the mean and the median, we expect that a poisson distribution is not appropriate and so we use a poisson-gamma distribution in our estimation using the Negative Binomial Regression procedure.
+
+We expect that along with the gender and the race of the nominee, their qualifications might influence the degree to which a nominee is interrupted. Those who are deemed less qualified by their peers (the American Bar Association) are likely to be interrupted more by members of the committee. Due to this suspicion, we include this variable as a control. Although we have clear expectations about the role that race, gender, and the partisan contexts in which a nominee may find themselves in will influence whether the nominee is interrupted, our expectations about their qualifications are not necessarily an alternative explanation for interruptions but is rather something that will likely have some influence on how many times a nominee is interrupted over the course of their confirmation hearing.	    
+	    
+\input{../tables_figures/simple.tex}
+
+In our discussion of Figure \ref{fig:1} above, we noted that we excluded two points from the figure for readability - the hearing for Gorsuch and the hearing for Kavanaugh. Since both nominees were white males and were embroiled in highly salient and controversial hearings, we exclude their hearings from our analyses in the second column of Table \ref{tab:1} in hopes of determining whether these are influential points biasing our results. We see that this is indeed the case. Our results appear quite different when excluding the cases of Gorsuch and Kavanaugh. We still do not find evidence for our hypotheses. It appears that the interruptions a nominee experiences might just be tied to whether or not there is controversy around their nomination. In terms of direction of the effect of division on interruptions, these conform with expectations about the hyperpolarization a number of scholars have observed in elite behavior when we include all cases \citep{McCarty, Ramey2017, Enders2020a}. Specifically, we find that more recent hearings have approximately 0.2 fewer interruptions than the previous year did on average. We also observe that when the committee is divided, there are about 3 fewer interruptions in a given hearing than when it is less divided. 
+	    
+\subsection{Discussion of Study 1}
+	    
+Comparing these results to those of the t-tests, one might be alarmed by the difference in our results, we are not, however. The cases of Gorsuch and Kavanaugh were heavily partisan but were asymmetrically so. Both Gorsuch and Kavanaugh were nominated by a controversial Republican president and were controversial figures themselves. Therefore, this asymmetry is likely to make the split sample mean quite high. When looking at the t-test again in Figure \ref{fig:3}, the confidence intervals produced by the t-tests for the full sample are quite large. Therefore, we might expect that if there are equally controversial nominations by a Democratic president that record similar counts of interruptions, we should see that the differences between the full and the censored dataset stay smaller. As a result of how little clear support for our hypotheses are, it seems somewhat full-hearty to conclude that our hypotheses find support providing conclusive evidence. What we observe here might be part of a trend demonstrating the effects of an increasingly hyper-polarized political elite. Although the results of Study 1 do not support our hypothesis, as we allude to in our theory, we might expect that although there might not be more interruptions, there may be other forms of bias along the nominee's characteristics. Study 2 seeks to explore this speculation.
+	    
+\subsection{Study 2}
+For Study 2, we implement a structural topic model, specifically Latent Dirichlet Allocation, with the goal of determining whether the topics that are discussed in hearings are different between gender and racial categories. First, we take all text from the hearings and clean it in the same way that we did earlier (making a row per comment then aggregating them on speaker). This time, however, we do not exclude comments made by the committee members. We preform the standard pre-processing steps in text analysis by stemming words, removing punctuation, etcetera. 
+	    
+We run two models; one that we later use to regress the race of the nominee on what topics were discussed during their hearings as defined by the STM model and another on the gender of the nominee. We do this with the goal of being able to predict differences in what topics were discussed for the nominees based on their race and their gender. 
+
+First, we use the \verb|stm| package \citeyearpar[see][]{roberts_et-al_2019} to use an LDA model to discover 10 topics in the transcripts. Rather than a utilizing an algorithm to perform simple clustering, central to our claim is that we believe there will be heterogeneity between documents, we also expect there to be heterogeneity between the nominee's charachteristics. This LDA model allows for us to pass distributional priors to the algorithm where these priors can be defined by information such as the candidate's race and gender. Roberts and colleagues \citeyearpar[][]{roberts_et-al_2014, grimmer_et-al_2021} provide more full treatments of how these models work with applications for social scientists. We then use the results of the LDA to perform a simple linear regression where the outcome variable of interest is topic and the independent variable is the race or gender of the nominee. Specifically, the linear model takes each of the topics and treats them as dummies and iteratively regresses either the race or the gender variable on the topic dummies.  
+	    
+The result of these predictive regressions are presented in Figures \ref{fig:stm_poc} and \ref{fig:stm_male}. To note, in Figure \ref{fig:stm_poc} as you move up in values on the x-axis, it depicts the coefficient for nominees of color. Likewise in Figure \ref{fig:stm_male}, as you move up values on the x-axis, it depicts the coefficient for male nominees. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 175mm, width = 175mm]{../tables_figures/stm_poc_predict.jpg}
+    \caption{Predicting topic from nominee race}
+    \label{fig:stm_poc}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 175mm, width = 175mm]{../tables_figures/stm_male_predict.jpg}
+    \caption{Predicting topic from nominee gender}
+    \label{fig:stm_male}
+\end{figure}
+
+\subsection{Discussion of Study 2}
+
+The results of our models demonstrate that there are a number of topics that come up for female nominees and nominees of color that are not brought up for male or white nominees. Looking at Figure \ref{fig:stm_male}, we see that out of 10 topics, there are 6 topics where the content of the conversation between the commitee and the nominees are different between the male and female nominees. We see in Figure \ref{fig:stm_poc} that 7 topics are differnt when you compare white nominees and nominees of color.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 175mm, width = 175mm]{../tables_figures/stm_poc_frex.jpg}
+    \caption{Predicted proportion of topics with 5 top words based on their score.}
+    \label{fig:frex_poc}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 175mm, width = 175mm]{../tables_figures/stm_male_frex.jpg}
+    \caption{Predicted proportion of topics with 5 top words based on their score.}
+    \label{fig:frex_male}
+\end{figure}
+	    
+Figures \ref{fig:frex_poc} and \ref{fig:frex_male} tell us little substantively about the topics. We obtain the 5 words in each topic with the highest score. A score is the ratio of the logged frequency of the word in the given topic to the logged frequency of it in other topics.  
+
+When looking at gender, Figure \ref{fig:frex_male} and Figure \ref{fig:stm_male} show that Topic 17 which is also related to intellect and qualifications is more likely to be brought up for male nominees than female nominees. Topics related to crime are discussed more often for female nominees than male nominees. One thing that is clear about these analyses is that the data generating process is somewhat unclear - is it that female nominees have conversations about crime more brought up during their hearings due to gender bias and in context it is a manifestation of female nominees being challenged on topics for which they are stereotyped in politics to be less effective at relative to their male peers? In this instance, this would make sense. Significant work on gender stereotypes in American politics suggests that female candidates are criticized much more often on topics related to national defense, economic policy, and crime since they are stereotyped as being less equipped at handling those issues \citep{Huddy1993, Sanbonmatsu2009, Hayes2011}. While it is no surprise that there are relatively fewer substantive differences between the topics that are discussed for nominees of color and female nominees, there are important differences in the topics brought up and they align with our assumptions about the negative and stereotypical views that many whites and males have toward other groups. 
+
+	    
+\section{Conclusions}
+In this paper, we predicted that there would be gendered-and-racially-based differences in how Federal Judiciary nominees were treated in their confirmation hearings. First, we tested whether female or nominees of color were interrupted more during their hearings relative to their male and white colleagues. The interruptions hypothesis found mixed results. In the next section we suggest that this might be a result of our measure capturing two separate, but related, concepts. Second, we tested whether female or nominees of color had different topics discussed during their hearings than their male or white counterparts. Analyses demonstrate that there are some substantive differences in topics and that they follow what one might expect given commonly-held racial and gendered stereotypes in politics. 
+
+Although the models are imperfect and should undergo more work, this present manuscript gives some interesting insights into the ways in which institutions and the behavior of those within them are not impervious to pernicious biases against women and people of color. The present manuscript also stands as a template for scholars to study other institutions and makes a call for scholars to use the wealth of data and computational abilities to study the ways in which biases manifest themselves. 
+
+    
+\section{Future Directions}
+There are a few elements yet to explore for this project. We first need to explore the idea of using a fewer number of topics for the topic model. As Figures \ref{fig:frex_poc} and \ref{fig:frex_male} demonstrate, the topics do not appear to have substantively meaningful differences between them. Decreasing the number of topics may make these delineations less sharp and should therefor produce results that are more interpretable. While doing this, however, one must be careful of having too few topics where too many substantive topics are folded within one in the model. 
+
+The project should also more seriously consider how we conceptualize interruptions. While we have the simple task of measuring interruptions as a em-dash in a transcript, there is much information obfuscated by the fact that this is transcript data. Future iterations of the project would benefit from testing whether particular interruptions are a latent characteristic of hostility toward the candidate or whether it is an attempt to delegitimize the nominee. One valuable tool to leverage in an attempt to test this distinction is to use data collected from video recordings of the transcripts. Newer tools yet to be fully taken advantage of in political science have been applied to studying speaker tone to measure affective differences in speech that are not readily captured through approaches such as sentiment analysis with textual data \citep{Knox2021c}.
+
+\newpage
+\bibliographystyle{apsr}
+\bibliography{judicial_interruptions}
+
+\end{document}

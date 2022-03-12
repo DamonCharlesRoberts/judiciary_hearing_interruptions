@@ -1,6 +1,8 @@
 # Ignore IDE file
 .vscode/
-
+.DS_Store
+Icon/r
+desktop.ini
 # Ignore R history
 .RHistory
 .RData
