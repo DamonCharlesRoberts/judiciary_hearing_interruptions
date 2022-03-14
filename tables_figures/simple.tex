@@ -1,38 +1,31 @@
 
-% Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Thu, Mar 03, 2022 - 11:23:44
-\begin{table}[!htbp] \centering 
-  \caption{Female and Nominees of Color interrupted more in confirmation hearings} 
-  \label{} 
-\begin{tabular}{@{\extracolsep{5pt}}lcc} 
-\\[-1.8ex]\hline \\[-1.8ex] 
-\\[-1.8ex] & \multicolumn{2}{c}{Count of Interruptions} \\ 
- & Full Cases & Excluded Extreme Cases \\ 
-\hline \\[-1.8ex] 
- Person of Color & $-$0.635 &  \\ 
-  & (0.932) &  \\ 
-  Male & 2.086 &  \\ 
-  & (1.151) &  \\ 
-  Hearing Year &  & 0.083 \\ 
-  &  & (0.571) \\ 
-  ABA Qualified &  & 0.107 \\ 
-  &  & (0.689) \\ 
-  Division & $-$0.278$^{*}$ & 0.012 \\ 
-  & (0.066) & (0.043) \\ 
-  abaQualified & $-$0.369 & 0.316 \\ 
-  & (0.570) & (0.399) \\ 
-  govdivided & $-$3.192$^{*}$ & 0.775 \\ 
-  & (0.705) & (0.440) \\ 
-  Constant & 557.317$^{*}$ & $-$25.646 \\ 
-  & (132.735) & (86.502) \\ 
- N & 276 & 274 \\ 
-Log Likelihood & $-$229.482 & $-$181.233 \\ 
-$\theta$ & 0.053$^{*}$  (0.009) & 0.162$^{*}$  (0.041) \\ 
-AIC & 470.964 & 374.466 \\ 
-\hline \\[-1.8ex] 
-\multicolumn{3}{l}{Source: 2001 - 2020 U.S. Senate Judiciary Hearing Transcripts.} \\ 
-\multicolumn{3}{l}{Coefficients from Negative Binomial Regression Models.} \\ 
-\multicolumn{3}{l}{Standard errors in parenthases} \\ 
-\multicolumn{3}{l}{* p $<0.05$} \\ 
-\end{tabular} 
-\end{table} 
+\begin{table}
+\centering
+\caption{Count of interruptions explained by race and gender}
+\label{tab:neg_binomial}
+\begin{tabular}[t]{lcc}
+\toprule
+  & Full Cases & Excluded Extreme Cases\\
+\midrule
+Nominee of Color & \num{-0.589} & \num{0.102}\\
+ & (\num{0.938}) & (\num{0.570})\\
+Male & \num{2.052} & \num{0.068}\\
+ & (\num{1.156}) & (\num{0.685})\\
+Hearing Year & \num{-0.274}* & \num{0.011}\\
+ & (\num{0.067}) & (\num{0.043})\\
+ABA Qualified & \num{-0.410} & \num{0.243}\\
+ & (\num{0.575}) & (\num{0.396})\\
+Divided Government & \num{-3.228}* & \num{0.693}\\
+ & (\num{0.713}) & (\num{0.441})\\
+Constant & \num{550.641}* & \num{-24.811}\\
+ & (\num{133.816}) & (\num{86.468})\\
+\midrule
+Num.Obs. & \num{276} & \num{274}\\
+AIC & \num{462.7} & \num{366.6}\\
+BIC & \num{488.0} & \num{391.8}\\
+Log.Lik. & \num{-224.341} & \num{-176.279}\\
+RMSE & \num{0.61} & \num{0.66}\\
+\bottomrule
+\multicolumn{3}{l}{\rule{0pt}{1em}* p $<$ 0.05}\\
+\end{tabular}
+\end{table}

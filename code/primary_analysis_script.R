@@ -11,16 +11,15 @@
   #* Modularly load packages
 #install.packages('box')
 box::use(
-  ggplot2 = ggplot2[geom_linerange, geom_vline, geom_density, geom_point, geom_density_ridges, ggsave, labs],
-  ggthemes = ggthemes[theme_bw],
+  ggplot2 = ggplot2[geom_linerange, geom_vline, geom_density, geom_point, ggsave, labs, theme_bw],
   MASS = MASS[glm.nb],
   dplyr = dplyr[select, filter, mutate],
-  tribble = tribble[tibble],
+  tibble = tibble[tibble],
   plyr = plyr[ldply],
   stringr = stringr[str_remove],
   tidyr = tidyr[separate],
   quanteda = quanteda[corpus, tokens, tokens_remove, tokens_select, stopwords, dfm, dfm_wordstem, dfm_subset, ntoken, docvars],
-  stm = [searchK, stm, asSTMCorpus, labelTopics, estimateEffect, findThoughts, plotQuote],
+  stm = stm[searchK, stm, asSTMCorpus, labelTopics, estimateEffect, findThoughts, plotQuote],
   modelsummary = modelsummary[modelsummary]
 )
 
@@ -249,6 +248,11 @@ nb <- glm.nb(count ~ poc + male + hearingYear + abaQualified + govdivided, data 
     #** Negative Binomial Regression - Excluding Gorsuch and Kavanaugh ----
 nb4 <- glm.nb(count ~ poc + male + hearingYear + abaQualified + govdivided, data = countF)
 
+    #** Tables ----
+
+models = list('Full Cases' = nb, 'Excluded Extreme Cases' = nb4)
+fig1 = modelsummary(models, coef_map = c('poc' = 'Nominee of Color', 'male' = 'Male', 'hearingYear' = 'Hearing Year', 'abaQualified' = 'ABA Qualified', 'govdivided' = 'Divided Government', '(Intercept)' = 'Constant'), stars = c('*' = 0.05), out = 'tables_figures/simple.tex')
+
 # STUDY 2 ----
 
   #* Set up data ----
@@ -360,6 +364,7 @@ dev.off()
 summary(predict_topic_poc)
 save.image()
 
+pocThoughts = findThoughts(stm_model_poc, texts = topicDFtext$text, n = 2 topics = 1)
   #** Male ----
     #*** Find number of topics
 storage_male = searchK(topicDFCleanSTM$documents, topicDFCleanSTM$vocab, prevalence = ~ male, K = 10:30, data = docvars(topicDFClean), init.type = 'Spectral', seed = 060906)#iteratively run the model varyi8ng the number of topics and store it
@@ -377,17 +382,15 @@ jpeg('tables_figures/stm_male_frex.jpg')
 plot(stm_model_male, type = "summary", xlim = c(0,1), n=4, labeltype = "frex")
 dev.off()
       #*** Estimate effect of nominee gender on topic ----
-predict_topic_male = estimateEffect(formula = 1:10 ~ male, stmobj = stm_model_male, metadata = docvars(topicDFClean), uncertainty = "Global")
+predict_topic_male = estimateEffect(formula = 1:30 ~ male, stmobj = stm_model_male, metadata = docvars(topicDFClean), uncertainty = "Global")
       #*** Figure 6 ----
 jpeg('tables_figures/stm_male_predict.jpg')
-plot(predict_topic_male, covariate = "male", topics = c(1,2,3,4,5,6,7,8,9,10),
+plot(predict_topic_male, covariate = "male", topics = 1:30,
      model = stm_model_poc, method = "difference",
      cov.value1 = "male", cov.value2 = "true",
      main = "Topics of Female and Male nominee hearings", verbose.labels = FALSE, sub = "Data Source: Senate Judiciary Committee Federal Judiciary Hearing Transcripts.\n Note: Coefficient plot of nominee gender predicting topic")
 dev.off()
 save.image()
-
-
 
 #topic1_poc = findThoughts(stm_model_poc, texts = topicDFtext$text, n = 1, topics = 1)
 #topic3_poc = findThoughts(stm_model_poc, texts = topicDFtext$text, n = 1, topics = 3)
@@ -396,21 +399,3 @@ save.image()
 #plotQuote(topic1_poc, width = 30, main = 'Topic 1')
 #plotQuote(topic3_poc, width = 30, main = 'Topic 3')
 #dev.off()
-
-# Tables from study 1 ----
-
-models = list('Full Cases' = nb, 'Excluded Extreme Cases' = nb4)
-fig1 = modelsummary(models, coef_map = )
-#fig1 <- stargazer::stargazer(nb, nb4,
-#                             style = "apsr",
-#                             notes = c("Source: 2001 - 2020 U.S. Senate Judiciary Hearing Transcripts.", "Coefficients from Negative Binomial Regression Models.", "Standard errors in parenthases", "* p $<0.05$"),
-#                             title = "Female and Nominees of Color interrupted more in confirmation hearings",
-#                             dep.var.labels = c("Count of Interruptions"),
-#                             covariate.labels = c("Person of Color", "Male", "Hearing Year", "ABA Qualified", "Division"),
-#                             notes.append = FALSE,
-#                             star.cutoffs = c(0.05),
-#                             column.labels = c("Full Cases", "Excluded Extreme Cases"),
-#                             model.numbers = FALSE,
-#                             type = "latex",
-#                             out = "tables_figures/simple.tex"
-#                             )
