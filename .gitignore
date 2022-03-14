@@ -1,12 +1,12 @@
 # Ignore IDE file
 .vscode/
 .DS_Store
-Icon/r
+Icon\r
 desktop.ini
 # Ignore R history
 .RHistory
 .RData
-
+.RDataTmp
 # Ignore data directory
 /data/*
 .Rproj.user
